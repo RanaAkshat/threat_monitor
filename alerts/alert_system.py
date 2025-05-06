@@ -1,15 +1,19 @@
+from dotenv import load_dotenv
+import os
 import pandas as pd
 import time
-import os
 from twilio.rest import Client
 
-# Twilio config
-ACCOUNT_SID = "AC230554cc64143ee1a9d9ea860027a555"
-AUTH_TOKEN = "49dd837520f6b1d9fd51d2b6a62dbcf5"
-FROM_WHATSAPP = "whatsapp:+14155238886"
-TO_WHATSAPP = "whatsapp:+919310063601"
+# Load environment variables from .env file
+load_dotenv()
+
+ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
+AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
+FROM_WHATSAPP = os.getenv("FROM_WHATSAPP")
+TO_WHATSAPP = os.getenv("TO_WHATSAPP")
 
 client = Client(ACCOUNT_SID, AUTH_TOKEN)
+
 
 FILE_PATH = "data/categorized_tweets.csv"
 SEEN_IDS = set()

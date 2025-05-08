@@ -33,12 +33,12 @@ cd threat_monitor
 
 # Backend Setup (Django)
 
-cd backend
-python -m venv env
-source env/bin/activate  # On Windows: env\Scripts\activate
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
+On Windows: .\venv\Scripts\activate
+pip install fastapi uvicorn
+pip install pandas
 
 Your backend will now be running at:           (pip install pandas - needed )
 http://127.0.0.1:8000/api/threats

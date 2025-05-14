@@ -25,3 +25,4 @@ def get_threats():
         return {"tweets": data}
     except Exception as e:
         return {"error": f"Failed to read categorized_tweets.csv: {str(e)}"}
+

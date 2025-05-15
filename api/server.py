@@ -13,6 +13,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def read_root():
+    return {"message": "Threat Monitor API is running"}
+
+
 @app.get("/api/threats")
 def get_threats():
     csv_path = Path("data/categorized_tweets.csv")

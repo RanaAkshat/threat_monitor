@@ -1,0 +1,25 @@
+services:
+  backend:
+    build: ./api
+    ports:
+      - "8000:8000"  # 🧠 Backend will be accessible at http://localhost:8000
+    volumes:
+      - ./api:/app
+      - ./data:/../data
+    restart: always
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:8080"  # 🧠 Frontend will now run on http://localhost:8080
+    restart: always
+
+  alert:
+    build: ./alerts
+    volumes:
+      - ./alerts:/app
+      - ./data:/../data
+      - ./.env:/app/.env
+    depends_on:
+      - backend
+    restart: always

@@ -13,14 +13,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.on_event("startup")
+async def startup_message():
+    print("✅ Backend is running and accessible at: http://127.0.0.1:8000/api/threats")
+
 @app.get("/")
 def read_root():
     return {"message": "Threat Monitor API is running"}
 
-
 @app.get("/api/threats")
 def get_threats():
-    csv_path = Path("data/categorized_tweets.csv")
+    csv_path = Path("/data/categorized_tweets.csv")
     if not csv_path.exists():
         return {"error": "categorized_tweets.csv not found."}
 
@@ -30,4 +33,3 @@ def get_threats():
         return {"tweets": data}
     except Exception as e:
         return {"error": f"Failed to read categorized_tweets.csv: {str(e)}"}
-

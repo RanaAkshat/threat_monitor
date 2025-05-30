@@ -1,107 +1,87 @@
-# 🛡️ Threat Monitor - AI Based Social Media Crime Detection Dashboard
+# 🛡️ Threat Monitor - AI-Based Social Media Crime Detection Dashboard
+An AI-powered full-stack web application that monitors and detects online threats like hate speech, cyberbullying, fake accounts, and public safety risks across social media platforms like Twitter, YouTube, and Instagram — now enhanced with real-time WhatsApp alerting and Dockerized deployment.
 
-An AI-powered full-stack web application for monitoring and detecting threats like hate speech, cyberbullying, fake accounts, and public safety risks across social media platforms.
+# live demo - https://threat-monitor-u6gy.vercel.app/
 
-## 🧠 Tech Stack
+🚀 Key Features
+🔁 Auto-refreshing dashboard (every 10 seconds)
 
-- **Frontend:** React.js + Tailwind CSS
-- **Backend:** Django + Django REST Framework
-- **Database:** SQLite (or your choice)
-- **Visualization:** Charts, Tables, Stats (React components)
-- **Deployment:** Localhost (for now)
+📊 Threat Categorization Engine using NLP
 
----
+⚠️ Live Alert Panel with WhatsApp integration (via Twilio)
 
-## 🚀 Features
+📈 Trend Analysis via interactive charts and stats
 
-- 🔁 Real-time data refresh every 10 seconds
-- 📊 Threat categorization dashboard
-- ⚠️ Alert panel for live monitoring
-- 📈 Graphs for trends and threat types
-- 🧾 Exportable reports (CSV, PDF)
+📤 Export Reports to CSV and PDF
 
----
+🐳 One-Command Docker Deployment
 
-## 🛠️ Setup Instructions
+📱 Modular social media ingestion (Twitter, YouTube, Instagram ready)
 
-### 📁 1. Clone the repository
+# 🧠 Tech Stack
+Layer                      |                  Tech Used
+___________________________|______________________________________
+Frontend                   |          	React.js + Tailwind CSS
+Backend	                   |                 FastAPI 
+Alerts                     |      	Twilio WhatsApp API + Python
+Database                   |                 Pandas + CSV
+Deployment                 |          	Docker, Docker Compose
 
-```bash
+# 🐳 Run the App with One Command
+
+- First time (build + run)
+docker compose up --build
+- Subsequent runs
+docker compose up
+- Stop all containers
+docker compose down
+
+# Access the App
+Frontend: http://localhost:8080/
+Backend API: http://localhost:8000/api/threats
+
+# 🛠️ Manual Setup (Dev Mode)
+
+📁 Clone the Repo
 git clone --recurse-submodules https://github.com/RanaAkshat/threat_monitor.git
 cd threat_monitor
-```
 
-# Backend Setup (Django)
-# for windows
-pip install -r requirements.txt
-.\venv\Scripts\activate
-pip install fastapi uvicorn
-pip install pandas
+# 🧪 Backend (FastAPI)
 
-Your backend will now be running at:           (pip install pandas - needed )
-http://127.0.0.1:8000/api/threats
-
-# for mac
-pip install -r requirements.txt
-source venv/bin/activate
-pip install fastapi uvicorn
-pip install pandas
-
-
-
- # Frontend Setup (React)
- 
-# windows
-uvicorn is used .
-Frontend Setup (React) cd ../frontend # or wherever your React app is
-for this you have to open two windows in powershell and run commands simultaneously
-in window 1 , where you are in...
-(\__\__\threat_monitor)  - run this command - uvicorn api.server:app --reload 
-in window 2 , where you are in ...
-(\__\__\frontend) - run this commands
-npm install 
-npm run dev
-Visit the dashboard at:
-http://localhost:8080/
-
-# mac
-in window 1 of powershell :
-cd frontend
-npm install --no-optional --loglevel=error
-npm run dev
-pip install fastapi uvicorn
-pip install pandas
-uvicorn api.server:app --reload
-In your frontend directory, run:
-rm -rf node_modules package-lock.json
-npm cache clean --force
-npm install --no-optional
-npm install @rollup/rollup-darwin-arm64
-npm run build
-npx serve dist
-now frontend is ssuccseful
-
-# now check backend is working or not
 cd api
-uvicorn server:app --reload
-uvicorn server:app --reload --port 8080
-lsof -i :8080
-curl http://localhost:8080/api/threats
-now go to : http://localhost:8080/api/threats
+pip install -r requirements.txt
+uvicorn server:app --reload --port 8000
+Runs at: http://127.0.0.1:8000/api/threats
 
-#  Auto-Refresh Logic
+# 💻 Frontend (React + Vite)
+
+cd frontend
+npm install --legacy-peer-deps
+npm run dev
+Runs at: http://localhost:8080/
+
+# 🔔 Alert System (Twilio WhatsApp Alerts)
+
+cd alerts
+(Make sure .env is configured with your Twilio credentials)
+python alert_system.py
+
+# 🧪 Example Auto-Refresh Logic (Frontend)
+
 useEffect(() => {
   const loadData = async () => {
     const data = await fetchThreats();
     setThreats(data);
     setLoading(false);
   };
-
   loadData();
   const interval = setInterval(loadData, 10000);
   return () => clearInterval(interval);
 }, []);
 
-Author
+
+# 👨‍💻 Author
+
 Name: Akshat Rana
 GitHub: @RanaAkshat
+

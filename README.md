@@ -2,6 +2,8 @@
 An AI-powered full-stack web application that monitors and detects online threats like hate speech, cyberbullying, fake accounts, and public safety risks across social media platforms like Twitter, YouTube, and Instagram — now enhanced with real-time WhatsApp alerting and Dockerized deployment.
 
 # live demo - https://threat-monitor-u6gy.vercel.app/
+# Youtube link - https://youtu.be/TFEXHVwIhY8
+# ppt - https://www.canva.com/design/DAGo5ojhv_c/-HnoPRs-Qw96CE56atSEUg/edit?utm_content=DAGo5ojhv_c&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 🚀 Key Features
 🔁 Auto-refreshing dashboard (every 10 seconds)

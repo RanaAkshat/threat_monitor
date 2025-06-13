@@ -1,0 +1,5 @@
+transformers
+torch
+praw
+python-dotenv
+pandas

@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api:/app
+      - ./data:/data         # ✅ Fixed data mount path
+      - ./.env:/app/.env     # ✅ So PERSPECTIVE_API_KEY is loaded
+    restart: always
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    restart: always
+
+  alert:
+    build: ./alerts
+    volumes:
+      - ./alerts:/app
+      - ./data:/data         # ✅ Same fix here
+      - ./.env:/app/.env
+    depends_on:
+      - backend
+    restart: always

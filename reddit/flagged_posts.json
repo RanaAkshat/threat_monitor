@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Why an Appeals Court Blocked a Lower Court's Insane AntiTrump Ruling on the National Guard",
+    "url": "https://townhall.com/tipsheet/mattvespa/2025/06/13/why-an-appeals-court-blocked-a-lower-courts-insane-anti-trump-ruling-on-the-national-guard-n2658750",
+    "scores": {
+      "TOXICITY": 0.2820025,
+      "SEVERE_TOXICITY": 0.002708435,
+      "INSULT": 0.26957804,
+      "THREAT": 0.0070034824,
+      "IDENTITY_ATTACK": 0.011099357
+    }
+  },
+  {
+    "title": "Massive drug bust impeded by protesters 'thinking it was an ICE raid,' sheriff says: 'Idiots'",
+    "url": "https://nypost.com/2025/06/13/us-news/massive-drug-bust-impeded-by-protesters-thinking-it-was-an-ice-raid-sheriff-says-idiots/",
+    "scores": {
+      "TOXICITY": 0.74954444,
+      "SEVERE_TOXICITY": 0.023076924,
+      "INSULT": 0.755201,
+      "THREAT": 0.012026439,
+      "IDENTITY_ATTACK": 0.038683333
+    }
+  },
+  {
+    "title": "Why do the democrats burn down our cities every few year?",
+    "url": "https://www.reddit.com/r/Conservative/comments/1laleg0/why_do_the_democrats_burn_down_our_cities_every/",
+    "scores": {
+      "TOXICITY": 0.25462922,
+      "SEVERE_TOXICITY": 0.006713867,
+      "INSULT": 0.082866095,
+      "THREAT": 0.09316374,
+      "IDENTITY_ATTACK": 0.09245483
+    }
+  }
+]
